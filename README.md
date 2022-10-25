@@ -17,7 +17,7 @@ website:
 php tools/setup-ddev-project.php {projectname}
 ```
 
-adjust the config, if necessary, see [confid.yaml documentation](https://ddev.readthedocs.io/en/stable/users/extend/config_yaml/).
+adjust the config, if necessary, see [config.yaml documentation](https://ddev.readthedocs.io/en/stable/users/extend/config_yaml/).
 
 
 Clone your project into ``web/`` subdirectory:

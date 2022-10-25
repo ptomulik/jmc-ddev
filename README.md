@@ -11,14 +11,19 @@ git clone https://github.com/ptomulik/jmc-ddev.git && cd jmc-ddev/
 ```
 
 Create ``.ddev/config.local.yaml`` to customize the installation for your
-website, see [confid.yaml documentation](https://ddev.readthedocs.io/en/stable/users/extend/config_yaml/)
-
-Make directory named ``web`` and put website's source code there. Trailing
-slashes are crucial!
+website:
 
 ```bash
-mkdir -p web
-rsync -azv [<server>:]</path/to/source/project/> web/
+php tools/setup-ddev-project.php {projectname}
+```
+
+adjust the config, if necessary, see [confid.yaml documentation](https://ddev.readthedocs.io/en/stable/users/extend/config_yaml/).
+
+
+Clone your project into ``web/`` subdirectory:
+
+```bash
+git clone git@dev7.jmc.pl:jmc/{projectname}.git web
 ```
 
 Start ddev docker containers:
@@ -30,7 +35,7 @@ ddev start
 Create database and populate it with inital data.
 
 ```bash
-ddev import-db --src=./web/SQL_Structure.sql
+ddev import-db --src=./web/SQL_Base_start_structure.sql
 ddev import-db --no-drop --src=./web/SQL_Base_start_data.sql
 ```
 

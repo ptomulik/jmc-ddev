@@ -1,4 +1,6 @@
 name: contentiaddev
+additional_hostnames:
+  - "*.contentiaddev"
 type: php
 docroot: web
 php_version: "7.4"
@@ -6,7 +8,6 @@ webserver_type: nginx-fpm
 router_http_port: "80"
 router_https_port: "443"
 xdebug_enabled: false
-additional_hostnames: []
 additional_fqdns: []
 mariadb_version: "10.3"
 mysql_version: ""
